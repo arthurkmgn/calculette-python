@@ -24,19 +24,23 @@ while 1:
 	entree = connexion_avec_client.recv(1).decode()              	# j annalyse (concatainer?) les donée envoyé par le client : invoque entree
 	
 	try :
-		
+		int(entree)
 		if Calcul == None:											# si le signe est inchangé je modifi Valeur1
-			int(entree)
 			Valeur1 = Valeur1 + entree
+			print("valeur 1")
+
 		else:														# sinn je modifi Valeur2
-			int(entree)
 			Valeur2 = Valeur2 + entree
+			print("valeur 2")
 
 	except ValueError: 												# si entre n 'est pas un entier'
 		
 		if entree == "+" or entree == "-" or entree == "*" or entree == "/":		# si c'est un signe je modifie Calcul 
 			Calcul = entree
+			print("signe")
+
 		else:
+			print("ici")
 			break
 
 
